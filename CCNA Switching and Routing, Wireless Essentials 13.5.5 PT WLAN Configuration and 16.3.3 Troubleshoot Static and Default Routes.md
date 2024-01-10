@@ -275,8 +275,8 @@ R1# show history
 
 # ==II. Switching Concepts==
 
-- **Ingress Trafic** : Enter
-- **Egress Trafic** : Leave
+- **Ingress Traffic** : Enter
+- **Egress Traffic** : Leave
 
 ### Switch Learning
 
@@ -324,13 +324,13 @@ R1# show history
 
 - Can be in the same VLAN without having the same switch
 - Segment networks based on functions
-- VLAN creates a logical broadcast domain
+- VLAN creates a **logical broadcast domain**
 
 ![[Pasted image 20230902091815.png]]
 
 ### VLANs benefits
 
-- Smaller broadcast domains
+- **Smaller broadcast domains**
 - Improved Security
 - Improved IT Efficiency
 - Reduced Cost
@@ -912,7 +912,6 @@ C:\Users\PC2>ping 10.20.20.254
 **Broadcast Storm**
 
 - Abnormally high number of broadcasts overwhelming
-
 ### The Spanning Tree Algorithm
 
 - **Select the Root Bridge**
@@ -1095,7 +1094,6 @@ In our case the priority is the same
 
 - When EtherChannel is configured, virtual interface is called a port channel
 - Physical interfaces bundled together into a port channel interface
-
 ## Advantages
 
 - Consistency

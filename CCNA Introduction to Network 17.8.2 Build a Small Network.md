@@ -25,7 +25,7 @@ Switch1(config-line)# end
 Switch1> enable secret motdepasse
 ```
 
-**Activer et sécuriser l'accès à distance avec un mot de passe (Telnet & SSH)**
+**Activer et sécuriser l'accès à distance avec un mot de passe**
 
 ```
 Switch1(config)# line vty 0 15
@@ -46,9 +46,9 @@ Switch1(config)# service password-encryption
 Switch1(config)# banner motd #Autoriser aux administrateurs#
 ```
 
-Running Config => Fichier de configuration en cours du système à son état actuel
+**Running Config** => Fichier de configuration en cours du système à son état actuel
 
-Startup Config => Fichier de configuration du système à son démarrage
+**Startup Config** => Fichier de configuration du système à son démarrage
 
 **Afficher le running-config**
 
@@ -72,12 +72,12 @@ Switch1(config)# show startup-config
 Switch1(config)# copy running-config startup-config
 ```
 
-Reload => supprime le running config et redémarre le système avec le startup-config
+**Reload** => supprime le running config et redémarre le système avec le startup-config
 
 **Supprimer le startup-config** 
 
 ```
-erase startup-config
+Switch(config)# erase startup-config
 ```
 
 **Configuration d'un VLAN** 
@@ -170,9 +170,9 @@ Pour la configuration des équipements réseau dans un LAN, il faut vérifier l'
 
 **Routing Protocols**
 
-- OSPF (Open Shortest Path First)
-- EIGRP (Enchanced Interior Gateway Routing Protocol) by Cisco
-- BGP (Border Gateway Protocol)
+- **OSPF** (Open Shortest Path First)
+- **EIGRP** (Enchanced Interior Gateway Routing Protocol) by Cisco
+- **BGP** (Border Gateway Protocol)
 
 **Communication Peer-to-peer**
 
@@ -334,8 +334,8 @@ Crosstalk <=> Copper cable have oppposing circuit wire pairs twisted together.
   
   ![[Pasted image 20230625095239.png]]
 
-- Ethernet Straight-trought (interconnect host <=> switch and switch <=> router)
-- Ethernet Crossover (interconnect similar devices)
+- Ethernet **Straight-trought (interconnect host <=> switch and switch <=> router)
+- Ethernet **Crossover (interconnect similar devices)
   
   ![[Pasted image 20230625095743.png]]
   
@@ -347,9 +347,9 @@ Crosstalk <=> Copper cable have oppposing circuit wire pairs twisted together.
 
 **2 Types of Fiber Media**
 
-- Single-Mode Fiber (single ray of light, long distance hundreds of kilometers, haul telephony, cable TV application) <=> yellow cable
-- Multimode Fiber (led emitter, use in LAN, up to 10 Gbps, 550 meters) <=> orange cable
-- Multimode Fiber has a less strength signal than Single-mode Fiber.
+- Single-Mode Fiber **(single ray of light, long distance hundreds of kilometers, haul telephony, cable TV application)** <=> **yellow cable
+- Multimode Fiber **(led emitter, use in LAN, up to 10 Gbps, 550 meters)** <=> **orange cable
+- Multimode Fiber **has a less strength signal than Single-mode Fiber.
   
 **Usage Fiber**
 
@@ -362,10 +362,10 @@ Crosstalk <=> Copper cable have oppposing circuit wire pairs twisted together.
 
 **Wireless Standard**
 
-- Wi-Fi (IEEE 802.11) - Wireless LAN technology (WLAN)
-- Bluetooth (IEEE 802.15)  - 1 to 100 meters
-- WiMAX (IEEE 806.16) - point to multipoint topology
-- Zigbee (IEEE 802.15.4) - IoT, short range, low data-rates and long battery life
+- **Wi-Fi (IEEE 802.11)** - Wireless LAN technology (WLAN)
+- **Bluetooth (IEEE 802.15)**  - 1 to 100 meters
+- **WiMAX (IEEE 806.16)** - point to multipoint topology
+- **Zigbee (IEEE 802.15.4)** - IoT, short range, low data-rates and long battery life
 
 # ==V. Number System==
 
@@ -441,41 +441,38 @@ Media Access Control (MAC) : data encapsulation and media control, controls the 
 
 #### Half-Duplex Communication :
 
-- can transmit and receive on the media but cannot do so simultaneously
-- WLANs and legacy bus
+- can **transmit and receive on the media but cannot do so simultaneously
+- **WLANs and legacy bus
 
 #### Full-Duplex Communication :
 
-- Ethernet switches operate in full-duplex mode by default
-- transmit and receive on the shared media
+- **Ethernet switches operate in full-duplex mode by default
+- **transmit and receive on the shared media
 
-Two interconnected interfaces on an Ethernet switch should operate using the same duplex mode.
+Two interconnected interfaces on an Ethernet switch **should operate using the same duplex mode.
 
 #### 2 basic access control methods for shared media :
 
 - Contention-based access 
 - Controlled access
-
 ##### Contention-based access
 
 - Half-duplex 
 - Methods :
 	- CSMA/CD : Carrier Sense Multiple Access with Collision Detection (legacy bus-topology Ethernet LANs)
 	- CSMA/CA : Carrier Sense Multiple Access with Collision Avoidance (Wireless LANs)
-
 ##### Controlled access
 
 - Legacy token ring
 - Legacy ARCNET
 - each node has its own time to use the medium
-
 ##### Frame
 
 Information in the Frame depend on the protocol being used
 
-- Header
-- Data
-- Trailer
+- **Header
+- **Data
+- **Trailer
   
 ![[Pasted image 20230628225452.png]]
 
@@ -522,18 +519,18 @@ Ethernet LANs of today use switches that operate in full-duplex.
 
 **All MAC Address must be unique**
 
-- Vendors must register to IEEE to obtain a **unique 6 hexadecimal** (organizationally unique identifier) <-> OUI
+- Vendors must register to IEEE to obtain a **unique 6 hexadecimal (organizationally unique identifier) <-> OUI
 
 ![[Pasted image 20230629222309.png]]
 
-- Sometimes the MAC address is referred to as a **burned-in address (BIA)** ==> hard coded into read-only memory (ROM) on the NIC. Address is encoded into the ROM chip permanently.
+- Sometimes the MAC address is referred to as a **burned-in address (BIA)** ==> hard coded into **read-only memory (ROM) on the NIC**. Address is **encoded into the ROM chip permanently.
 
-- On modern pc it's possible to change MAC Address, traffic controlling on the MAC Address is no longer as secure.
+- On modern pc it's possible to change MAC Address, traffic controlling on the **MAC Address is no longer as secure.
 
-- When the pc boots up, NIC copies its MAC Address from ROM into RAM.
+- When the pc boots up, **NIC copies its MAC Address from ROM into RAM.
 
-- IPv4 : ARP (Address Resolution Protocol)
-- IPv6 : ND (Neighbor Discovery)
+- IPv4 : **ARP (Address Resolution Protocol)
+- IPv6 : **ND (Neighbor Discovery)
 
 #### Broadcast MAC Address FF-FF-FF-FF-FF-FF
 
@@ -542,22 +539,20 @@ Ethernet LANs of today use switches that operate in full-duplex.
   
 - DHCP uses Ethernet and IPv4 broadcast addresses.
 
-- **CAM** (**Content Addressable Memory**) Table / MAC Address table
+- **CAM** (**Content Addressable Memory**) Table / **MAC Address table
 
 ### Switch
 
 ##### Frame that enters
 
-- Examining source MAC address 
-- Examining Port number 
+- Examining **source MAC address 
+- Examining **Port number 
 
 **if the source MAC Address does not exit**
 
 - Added with the incoming port number
 
-MAC Address last 5 minutes in MAC Address Table
-
-
+MAC Address last 5 minutes in **MAC Address Table**
 ##### Frame Forwarding Methods 
 
 - **Store-and-forward** : receives frames and CRC error detection and forward
@@ -567,10 +562,10 @@ MAC Address last 5 minutes in MAC Address Table
 
 ##### Memory Buffering Methods
 
-- **Port-based memory** : Frames in queues to specific incoming and outgoint ports
+- **Port-based memory** : Frames in queues to specific incoming and outgoing ports
 - **Shared memory**: All Frames into a common memory buffer 
 
-Share memory buffering => better ability to store larger frames with fewer dropped frames.
+Share memory buffering => better ability to **store larger frames with fewer dropped frames.
 
 ##### Duplex and Speed Settings
 
@@ -579,7 +574,7 @@ Share memory buffering => better ability to store larger frames with fewer dropp
   
 ##### Autonegociation
 
-- Negotiate the best speed and duplex capabilities
+- Negotiate the **best speed and duplex capabilities
 
 ### Correct Cable type
   ![[Pasted image 20230701190605.png]]
@@ -647,7 +642,7 @@ Share memory buffering => better ability to store larger frames with fewer dropp
 
 **Creation**
 
-- 1990, the Internet Engineering Task Force (IETF) develop IPv6.
+- **1990**, the Internet Engineering Task Force (IETF) develop IPv6.
 
 **Improvements**
 
@@ -1544,11 +1539,11 @@ The use of DMZ (Demilitarized Zone) in case of a web server
 
 - **IPS** (Intrusion Prevention System, looking for malware, network attack signatures to stop)
 
-- ESA/WSA (Email Security Appliance filters spam and suspicious emailsand Web Security Appliance filters know and suspicious internet malware sites)
+- **ESA/WSA** (Email Security Appliance filters spam and suspicious emailsand Web Security Appliance filters know and suspicious internet malware sites)
 
-- AAA Server (Secure data base of who is authorized to access and manage network devices)
+- **AAA Server** (Secure data base of who is authorized to access and manage network devices)
 
-- Data Backup
+- **Data Backup**
 
 - Configuration Backup
 
